@@ -1,12 +1,13 @@
 pipeline {
     agent any 
-    
+
     stages {
-        stage('checkout code from Github') {
+        stage('Checkout Code from GitHub') {
             steps {
+                // Use SSH to authenticate
                 git branch: 'main',
-                    url: 'https://github.com/Abhishekkanawade20/My-Webpage.git'
-                    credentialsId: 'Abhishek'
+                    url: 'git@github.com:Abhishekkanawade20/My-Webpage.git',
+                    credentialsId: 'Abhishekkanawade20'
             }
         }
     }
