@@ -1,14 +1,13 @@
-/* groovylint-disable CompileStatic */
+/* groovylint-disable-next-line CompileStatic */
 pipeline {
-    agent any 
+    agent any
 
     stages {
-        stage('Checkout Code from GitHub') {
+        stage('Checkout Code') {
             steps {
-                // Use SSH to authenticate
-                git branch: 'main',
-                    url: 'git@github.com:Abhishekkanawade20/My-Webpage.git',
-                    credentialsId: 'Abhishekkanawade20'
+                script {
+                    git url: 'https://github.com/Abhishekkanawade20/My-Webpage.git', branch: 'main'
+                }
             }
         }
     }
