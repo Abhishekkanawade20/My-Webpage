@@ -10,12 +10,13 @@ pipeline {
                 }
             }
         }
-    }
+
         stage('Deploy index.html') {
             steps {
                 script {
-                //copy index.html to /var/www/html
-                sh 'cp /var/lib/jenkins/workspace/my-page-production/index.html /var/www/html/'
+                    // Copy index.html to /var/www/html
+                    sh 'cp /var/lib/jenkins/workspace/my-page-production/index.html /var/www/html/'
+                }
             }
         }
     }
